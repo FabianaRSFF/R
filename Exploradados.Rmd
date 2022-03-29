@@ -94,3 +94,15 @@ dados[dados$Idade<0 | dados$Idade>110 ,]$Idade = median(dados$Idade)
 dados[dados$Idade<0 | dados$Idade>110 ,]
 summary(dados$Idade)
 ```
+Dados duplicados:
+```{r}
+# Buscar duplicados pelo id:
+x = dados[duplicated(dados$Id),]
+x
+# Excluir dados pelo Id:
+dados = dados[-c(82),]
+# Verificar novamente
+x = dados[duplicated(dados$Id),]
+x
+summary(dados$Id)
+```
