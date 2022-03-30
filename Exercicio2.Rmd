@@ -61,5 +61,46 @@ hist(dados2$Jogar)
 
 ```{r}
 summary(dados2$Id)
+dados2[!complete.cases(dados2),]
+summary(dados$Umidade)
+median(dados2$Umidade, na.rm=T)
+dados2[is.na(dados2$Umidade) ,]$Umidade = median(dados2$Umidade, na.rm=T)
+summary(dados$Umidade)
+dados2[!complete.cases(dados2$Umidade),]
+```
 
+
+```{r}
+dados2 = dados2[-c(4),]
+```
+
+
+```{r}
+dados2 = read.csv("tempo.csv",sep = ";", na.strings="", stringsAsFactors=T)
+head(dados2)
+```
+```{r}
+unique(dados2$Umidade)
+dados2$Umidade = factor(dados2$Umidade)
+unique(dados2$Umidade)
+```
+```{r}
+dados2 = read.csv("tempo.csv",sep = ";", na.strings="", stringsAsFactors=T)
+head(dados2)
+```
+```{r}
+boxplot(dados2$Umidade)
+boxplot(dados2$Umidade, outline= F)
+x = boxplot(dados2$Umidade)$out
+x
+dados2 = dados2[-c(4),]
+```
+```{r}
+dados2 = read.csv("tempo.csv",sep = ";", na.strings="", stringsAsFactors=T)
+head(dados2)
+```
+```{r}
+dados2$Umidade = factor(dados2$Umidade(Id=4))
+rownames(dados2)
+dodos3 = dados2[(-4),]
 
